@@ -11,7 +11,7 @@ namespace Camunda\Service;
 
 use Camunda\Entity\Request\ProcessInstanceRequest;
 
-class ProcessInstanceServiceTest extends \PHPUnit_Framework_TestCase
+class ProcessInstanceServiceTest extends \PHPUnit\Framework\TestCase
 {
     public function testGetList()
     {

@@ -9,7 +9,7 @@
 use Camunda\Service\BasicService;
 use Camunda\Entity\Request\BasicRequest;
 
-class BasicServiceTest extends PHPUnit_Framework_TestCase
+class BasicServiceTest extends PHPUnit\Framework\TestCase
 {
     public function testSet()
     {
@@ -21,9 +21,9 @@ class BasicServiceTest extends PHPUnit_Framework_TestCase
         $basic->setRequestMethod('get');
         $basic->setRequestObject($basicRequest);
 
-        $this->assertEquals('/deployment', $basic->getRequestUrl());
-        $this->assertEquals('json', $basic->getRequestContentType());
-        $this->assertEquals('GET', $basic->getRequestMethod());
-        $this->assertEquals($basicRequest, $basic->getRequestObject());
+        static::assertEquals('/deployment', $basic->getRequestUrl());
+        static::assertEquals('json', $basic->getRequestContentType());
+        static::assertEquals('GET', $basic->getRequestMethod());
+        static::assertEquals($basicRequest, $basic->getRequestObject());
     }
 }

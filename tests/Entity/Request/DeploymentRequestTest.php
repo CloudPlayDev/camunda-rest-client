@@ -9,7 +9,7 @@
 namespace Camunda\Entity\Request;
 
 
-class DeploymentRequestTest extends \PHPUnit_Framework_TestCase
+class DeploymentRequestTest extends \PHPUnit\Framework\TestCase
 {
     public function testSet()
     {
@@ -19,7 +19,6 @@ class DeploymentRequestTest extends \PHPUnit_Framework_TestCase
 
         $dr = new DeploymentRequest();
         $dr->set('id', 'drId')->set('bbb', 'bbb');
-        var_dump($dr->getObject());
-        $this->assertEquals($dr->getObject(), $target);
+        static::assertEquals($dr->getObject(), $target);
     }
 }

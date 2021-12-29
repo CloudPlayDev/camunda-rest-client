@@ -8,7 +8,7 @@
 
 use Camunda\Helper\VariableCollection;
 
-class VariableCollectionTest extends PHPUnit_Framework_TestCase
+class VariableCollectionTest extends PHPUnit\Framework\TestCase
 {
     public function testAddVariable()
     {
@@ -36,6 +36,6 @@ class VariableCollectionTest extends PHPUnit_Framework_TestCase
             ->addVariable('aThirdVariable', true)
             ->addVariable('aFileVariable', 'TG9yZW0gaXBzdW0=', 'File', ['filename' => 'myFile.txt']);
 
-        $this->assertEquals($target, $vc->getVariables());
+        static::assertEquals($target, $vc->getVariables());
     }
 }

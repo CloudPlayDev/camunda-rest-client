@@ -10,7 +10,7 @@ namespace Camunda\Service\History;
 
 use Camunda\Entity\Request\History\IdentityLinkRequest;
 
-class IdentityLinkServiceTest extends \PHPUnit_Framework_TestCase
+class IdentityLinkServiceTest extends \PHPUnit\Framework\TestCase
 {
     const CAMUNDA_REST_HOST = 'http://localhost:8080/engine-rest';
 

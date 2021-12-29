@@ -8,7 +8,7 @@
 
 use Camunda\Helper\FileCollection;
 
-class FileCollectionTest extends PHPUnit_Framework_TestCase
+class FileCollectionTest extends PHPUnit\Framework\TestCase
 {
     public function testAddFile()
     {
@@ -28,6 +28,6 @@ class FileCollectionTest extends PHPUnit_Framework_TestCase
         $fc->addFile('a', 'a', 'a.txt')
             ->addFile('b', 'b', 'b.txt');
 
-        $this->assertEquals($target, $fc->getFiles());
+        static::assertEquals($target, $fc->getFiles());
     }
 }

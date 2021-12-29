@@ -11,7 +11,7 @@ namespace Camunda\Service;
 use Camunda\Entity\Request\DeploymentRequest;
 use Camunda\Helper\FileCollection;
 
-class DeploymentServiceTest extends \PHPUnit_Framework_TestCase
+class DeploymentServiceTest extends \PHPUnit\Framework\TestCase
 {
     public function testGetList()
     {
