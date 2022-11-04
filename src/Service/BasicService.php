@@ -9,6 +9,7 @@
 namespace Camunda\Service;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\RequestException;
 use Camunda\Helper\FileCollection;
 use Camunda\Helper\VariableCollection;
@@ -21,11 +22,6 @@ use GuzzleHttp\Psr7\Response;
  */
 class BasicService
 {
-    /**
-     * @var string url of camunda rest engine
-     */
-    private $restApiUrl;
-
     /**
      * @var string url of specific operation for specific resource
      */
@@ -57,14 +53,22 @@ class BasicService
      */
     private $responseContents;
 
+    private Client $client;
+
     /**
      * BasicService constructor.
      *
      * @param string $restApiUrl url of camunda rest engine
      */
-    public function __construct($restApiUrl = '')
+    public function __construct(string $restApiUrl = '', ?string $apiUser = null, ?string $apiPassword = null)
     {
-        $this->restApiUrl = rtrim(trim($restApiUrl), '/');
+        $clientSettings = [
+            'base_uri' => rtrim(trim($restApiUrl), '/'),
+        ];
+        if($apiUser && $apiPassword) {
+            $clientSettings['auth'] = [$apiUser, $apiPassword];
+        }
+        $this->client = new Client($clientSettings);
     }
 
     /**
@@ -73,7 +77,7 @@ class BasicService
      * @param $requestUrl
      * @return $this
      */
-    public function setRequestUrl($requestUrl)
+    public function setRequestUrl($requestUrl): self
     {
         $this->requestUrl = $requestUrl;
         return $this;
@@ -82,9 +86,9 @@ class BasicService
     /**
      * get request url.
      *
-     * @return mixed
+     * @return string
      */
-    public function getRequestUrl()
+    public function getRequestUrl(): string
     {
         return $this->requestUrl;
     }
@@ -95,7 +99,7 @@ class BasicService
      * @param string $requestMethod
      * @return $this
      */
-    public function setRequestMethod($requestMethod)
+    public function setRequestMethod(string $requestMethod): self
     {
         $this->requestMethod = strtoupper($requestMethod);
         return $this;
@@ -106,7 +110,7 @@ class BasicService
      *
      * @return string
      */
-    public function getRequestMethod()
+    public function getRequestMethod(): string
     {
         return $this->requestMethod;
     }
@@ -117,7 +121,7 @@ class BasicService
      * @param string $requestContentType (query/json/multipart)
      * @return $this
      */
-    public function setRequestContentType($requestContentType)
+    public function setRequestContentType(string $requestContentType): self
     {
         $requestContentType = strtolower($requestContentType);
         if (in_array($requestContentType, ['query', 'json', 'multipart'])) {
@@ -131,7 +135,7 @@ class BasicService
      *
      * @return string
      */
-    public function getRequestContentType()
+    public function getRequestContentType(): string
     {
         return $this->requestContentType;
     }
@@ -142,7 +146,7 @@ class BasicService
      * @param BasicRequest $requestObject
      * @return $this
      */
-    public function setRequestObject($requestObject)
+    public function setRequestObject(BasicRequest $requestObject): self
     {
         $this->requestObject = $requestObject;
         return $this;
@@ -153,7 +157,7 @@ class BasicService
      *
      * @return BasicRequest
      */
-    public function getRequestObject()
+    public function getRequestObject(): BasicRequest
     {
         return $this->requestObject;
     }
@@ -163,7 +167,7 @@ class BasicService
      *
      * @return int response code
      */
-    public function getResponseCode()
+    public function getResponseCode(): int
     {
         return $this->responseCode;
     }
@@ -181,10 +185,11 @@ class BasicService
     /**
      * run this service and get response from camunda engine.
      *
-     * @param bool $HAL whether use HAL or not
+     * @param bool $HAL whether you use HAL or not
      * @return $this
+     * @throws \JsonException
      */
-    public function run($HAL = false)
+    public function run(bool $HAL = false): self
     {
         $object = ($this->requestObject instanceof BasicRequest) ? $this->requestObject->getObject() : [];
         $body = [];
@@ -196,7 +201,7 @@ class BasicService
         }
 
         if ($object) {
-            if ($this->requestContentType == 'multipart') {
+            if ($this->requestContentType === 'multipart') {
                 foreach ($object as $key => $value) {
                     if ($value instanceof VariableCollection) {
                         array_push($body, [
@@ -229,16 +234,16 @@ class BasicService
         }
 
         // when json body is empty, add content-type
-        if (empty($body) && $this->requestContentType == 'json') {
+        if (empty($body) && $this->requestContentType === 'json') {
             $option['headers']['Content-Type'] = 'application/json';
         } else {
             $option[$this->requestContentType] = $body;
         }
 
-        $client = new Client();
+        $client = $this->client;
         try {
-            $response = $client->request($this->requestMethod, $this->restApiUrl . $this->requestUrl, $option);
-        } catch (RequestException $requestException) {
+            $response = $client->request($this->requestMethod, $this->requestUrl, $option);
+        } catch (RequestException|GuzzleException $requestException) {
             $response = $requestException->getResponse();
         }
 
@@ -246,8 +251,9 @@ class BasicService
             $this->responseCode = $response->getStatusCode();
             $this->responseContents = $response->getBody()->getContents();
 
-            if (in_array('application/json', $response->getHeader('Content-Type')) || in_array('application/hal+json', $response->getHeader('Content-Type'))) {
-                $this->responseContents = json_decode($this->responseContents, false);
+            if (in_array('application/json', $response->getHeader('Content-Type'), true)
+                || in_array('application/hal+json', $response->getHeader('Content-Type'), true)) {
+                $this->responseContents = json_decode($this->responseContents, false, 512, JSON_THROW_ON_ERROR);
             }
         } else {
             $this->responseCode = '';
@@ -262,7 +268,7 @@ class BasicService
      *
      * @return $this
      */
-    public function reset()
+    public function reset(): self
     {
         $this->requestUrl = '';
         $this->requestMethod = 'GET';
