@@ -243,7 +243,7 @@ class BasicService
         $client = $this->client;
         try {
             $response = $client->request($this->requestMethod, $this->requestUrl, $option);
-        } catch (RequestException|GuzzleException $requestException) {
+        } catch (RequestException $requestException) {
             $response = $requestException->getResponse();
         }
 
