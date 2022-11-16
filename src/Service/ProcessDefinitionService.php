@@ -16,7 +16,7 @@ class ProcessDefinitionService extends BasicService
         $processDefinitionId,
         ProcessDefinitionRequest $processDefinitionRequest = null
     ) {
-        $this->setRequestUrl('/process-definition/' . $processDefinitionId . '/statistics')
+        $this->setRequestUrl('process-definition/' . $processDefinitionId . '/statistics')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($processDefinitionRequest)
@@ -45,7 +45,7 @@ class ProcessDefinitionService extends BasicService
 
     public function getDiagramById($processDefinitionId)
     {
-        $this->setRequestUrl('/process-definition/' . $processDefinitionId . '/diagram')
+        $this->setRequestUrl('process-definition/' . $processDefinitionId . '/diagram')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -71,7 +71,7 @@ class ProcessDefinitionService extends BasicService
         $processDefinitionId,
         ProcessDefinitionRequest $processDefinitionRequest = null
     ) {
-        $this->setRequestUrl('/process-definition/' . $processDefinitionId . '/form-variables')
+        $this->setRequestUrl('process-definition/' . $processDefinitionId . '/form-variables')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($processDefinitionRequest)
@@ -100,7 +100,7 @@ class ProcessDefinitionService extends BasicService
 
     public function getList(ProcessDefinitionRequest $processDefinitionRequest = null)
     {
-        $this->setRequestUrl('/process-definition')
+        $this->setRequestUrl('process-definition')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($processDefinitionRequest)
@@ -111,7 +111,7 @@ class ProcessDefinitionService extends BasicService
 
     public function getListCount(ProcessDefinitionRequest $processDefinitionRequest = null)
     {
-        $this->setRequestUrl('/process-definition/count')
+        $this->setRequestUrl('process-definition/count')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($processDefinitionRequest)
@@ -122,7 +122,7 @@ class ProcessDefinitionService extends BasicService
 
     public function getRenderedStartFormById($processDefinitionId)
     {
-        $this->setRequestUrl('/process-definition/' . $processDefinitionId . '/rendered-form')
+        $this->setRequestUrl('process-definition/' . $processDefinitionId . '/rendered-form')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -146,7 +146,7 @@ class ProcessDefinitionService extends BasicService
 
     public function getStartFormKeyById($processDefinitionId)
     {
-        $this->setRequestUrl('/process-definition/' . $processDefinitionId . '/startForm')
+        $this->setRequestUrl('process-definition/' . $processDefinitionId . '/startForm')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -170,7 +170,7 @@ class ProcessDefinitionService extends BasicService
 
     public function getProcessInstanceStatistics(ProcessDefinitionRequest $processDefinitionRequest = null)
     {
-        $this->setRequestUrl('/process-definition/statistics')
+        $this->setRequestUrl('process-definition/statistics')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($processDefinitionRequest)
@@ -181,7 +181,7 @@ class ProcessDefinitionService extends BasicService
 
     public function getXMLById($processDefinitionId)
     {
-        $this->setRequestUrl('/process-definition/' . $processDefinitionId . '/xml')
+        $this->setRequestUrl('process-definition/' . $processDefinitionId . '/xml')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -205,7 +205,7 @@ class ProcessDefinitionService extends BasicService
 
     public function getById($processDefinitionId)
     {
-        $this->setRequestUrl('/process-definition/' . $processDefinitionId)
+        $this->setRequestUrl('process-definition/' . $processDefinitionId)
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -230,7 +230,7 @@ class ProcessDefinitionService extends BasicService
         $processDefinitionId,
         ProcessDefinitionRequest $processDefinitionRequest = null
     ) {
-        $this->setRequestUrl('/process-definition/' . $processDefinitionId . '/start')
+        $this->setRequestUrl('process-definition/' . $processDefinitionId . '/start')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($processDefinitionRequest)
@@ -261,7 +261,7 @@ class ProcessDefinitionService extends BasicService
         $processDefinitionId,
         ProcessDefinitionRequest $processDefinitionRequest = null
     ) {
-        $this->setRequestUrl('/process-definition/' . $processDefinitionId . '/submit-form')
+        $this->setRequestUrl('process-definition/' . $processDefinitionId . '/submit-form')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($processDefinitionRequest)
@@ -292,7 +292,7 @@ class ProcessDefinitionService extends BasicService
         $processDefinitionId,
         ProcessDefinitionRequest $processDefinitionRequest = null
     ) {
-        $this->setRequestUrl('/process-definition/' . $processDefinitionId . '/suspended')
+        $this->setRequestUrl('process-definition/' . $processDefinitionId . '/suspended')
             ->setRequestMethod('PUT')
             ->setRequestContentType('JSON')
             ->setRequestObject($processDefinitionRequest)
@@ -323,7 +323,7 @@ class ProcessDefinitionService extends BasicService
         $processDefinitionId,
         ProcessDefinitionRequest $processDefinitionRequest = null
     ) {
-        $this->setRequestUrl('/process-definition/' . $processDefinitionId . '/history-time-to-live')
+        $this->setRequestUrl('process-definition/' . $processDefinitionId . '/history-time-to-live')
             ->setRequestMethod('PUT')
             ->setRequestContentType('JSON')
             ->setRequestObject($processDefinitionRequest)
@@ -352,7 +352,7 @@ class ProcessDefinitionService extends BasicService
 
     public function delete($processDefinitionId, ProcessDefinitionRequest $processDefinitionRequest = null)
     {
-        $this->setRequestUrl('/process-definition/' . $processDefinitionId)
+        $this->setRequestUrl('process-definition/' . $processDefinitionId)
             ->setRequestMethod('DELETE')
             ->setRequestContentType('QUERY')
             ->setRequestObject($processDefinitionRequest)
@@ -363,7 +363,7 @@ class ProcessDefinitionService extends BasicService
 
     public function restart($processDefinitionId, ProcessDefinitionRequest $processDefinitionRequest = null)
     {
-        $this->setRequestUrl('/process-definition/' . $processDefinitionId . '/restart')
+        $this->setRequestUrl('process-definition/' . $processDefinitionId . '/restart')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($processDefinitionRequest)
@@ -374,7 +374,7 @@ class ProcessDefinitionService extends BasicService
 
     public function restartAsync($processDefinitionId, ProcessDefinitionRequest $processDefinitionRequest = null)
     {
-        $this->setRequestUrl('/process-definition/' . $processDefinitionId . '/restart-async')
+        $this->setRequestUrl('process-definition/' . $processDefinitionId . '/restart-async')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($processDefinitionRequest)

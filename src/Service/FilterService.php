@@ -14,7 +14,7 @@ class FilterService extends BasicService
 {
     public function getList(FilterRequest $filterRequest = null)
     {
-        $this->setRequestUrl('/filter')
+        $this->setRequestUrl('filter')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($filterRequest)
@@ -25,7 +25,7 @@ class FilterService extends BasicService
 
     public function getListCount(FilterRequest $filterRequest = null)
     {
-        $this->setRequestUrl('/filter/count')
+        $this->setRequestUrl('filter/count')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($filterRequest)
@@ -36,7 +36,7 @@ class FilterService extends BasicService
 
     public function getById($filterId, FilterRequest $filterRequest = null)
     {
-        $this->setRequestUrl('/filter/' . $filterId)
+        $this->setRequestUrl('filter/' . $filterId)
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($filterRequest)
@@ -47,7 +47,7 @@ class FilterService extends BasicService
 
     public function create(FilterRequest $filterRequest = null)
     {
-        $this->setRequestUrl('/filter/create')
+        $this->setRequestUrl('filter/create')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($filterRequest)
@@ -58,7 +58,7 @@ class FilterService extends BasicService
 
     public function update($filterId, FilterRequest $filterRequest = null)
     {
-        $this->setRequestUrl('/filter/' . $filterId)
+        $this->setRequestUrl('filter/' . $filterId)
             ->setRequestMethod('PUT')
             ->setRequestContentType('JSON')
             ->setRequestObject($filterRequest)
@@ -69,7 +69,7 @@ class FilterService extends BasicService
 
     public function delete($filterId)
     {
-        $this->setRequestUrl('/filter/' . $filterId)
+        $this->setRequestUrl('filter/' . $filterId)
             ->setRequestMethod('DELETE')
             ->setRequestContentType('QUERY')
             ->run();
@@ -79,7 +79,7 @@ class FilterService extends BasicService
 
     public function execute($filterId)
     {
-        $this->setRequestUrl('/filter/' . $filterId . '/singleResult')
+        $this->setRequestUrl('filter/' . $filterId . '/singleResult')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -89,7 +89,7 @@ class FilterService extends BasicService
 
     public function executeList($filterId)
     {
-        $this->setRequestUrl('/filter/' . $filterId . '/list')
+        $this->setRequestUrl('filter/' . $filterId . '/list')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -99,7 +99,7 @@ class FilterService extends BasicService
 
     public function executeCount($filterId)
     {
-        $this->setRequestUrl('/filter/' . $filterId . '/count')
+        $this->setRequestUrl('filter/' . $filterId . '/count')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();

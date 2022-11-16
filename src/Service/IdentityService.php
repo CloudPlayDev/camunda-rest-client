@@ -14,7 +14,7 @@ class IdentityService extends BasicService
 {
     public function getGroups(IdentityRequest $identityRequest = null)
     {
-        $this->setRequestUrl('/identity/groups')
+        $this->setRequestUrl('identity/groups')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($identityRequest)
@@ -25,7 +25,7 @@ class IdentityService extends BasicService
 
     public function verifyUser(IdentityRequest $identityRequest = null)
     {
-        $this->setRequestUrl('/identity/verify')
+        $this->setRequestUrl('identity/verify')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($identityRequest)

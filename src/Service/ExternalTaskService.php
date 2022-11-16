@@ -14,7 +14,7 @@ class ExternalTaskService extends BasicService
 {
     public function getById($externalTaskId)
     {
-        $this->setRequestUrl('/external-task/' . $externalTaskId)
+        $this->setRequestUrl('external-task/' . $externalTaskId)
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -24,7 +24,7 @@ class ExternalTaskService extends BasicService
 
     public function getList(ExternalTaskRequest $externalTaskRequest = null)
     {
-        $this->setRequestUrl('/external-task')
+        $this->setRequestUrl('external-task')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($externalTaskRequest)
@@ -35,7 +35,7 @@ class ExternalTaskService extends BasicService
 
     public function getListCount(ExternalTaskRequest $externalTaskRequest = null)
     {
-        $this->setRequestUrl('/external-task/count')
+        $this->setRequestUrl('external-task/count')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($externalTaskRequest)
@@ -46,7 +46,7 @@ class ExternalTaskService extends BasicService
 
     public function fetchAndLock(ExternalTaskRequest $externalTaskRequest = null)
     {
-        $this->setRequestUrl('/external-task/fetchAndLock')
+        $this->setRequestUrl('external-task/fetchAndLock')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($externalTaskRequest)
@@ -57,7 +57,7 @@ class ExternalTaskService extends BasicService
 
     public function complete($externalTaskId, ExternalTaskRequest $externalTaskRequest = null)
     {
-        $this->setRequestUrl('/external-task/' . $externalTaskId . '/complete')
+        $this->setRequestUrl('external-task/' . $externalTaskId . '/complete')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($externalTaskRequest)
@@ -68,7 +68,7 @@ class ExternalTaskService extends BasicService
 
     public function handleError($externalTaskId, ExternalTaskRequest $externalTaskRequest = null)
     {
-        $this->setRequestUrl('/external-task/' . $externalTaskId . '/bpmnError')
+        $this->setRequestUrl('external-task/' . $externalTaskId . '/bpmnError')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($externalTaskRequest)
@@ -79,7 +79,7 @@ class ExternalTaskService extends BasicService
 
     public function handleFailure($externalTaskId, ExternalTaskRequest $externalTaskRequest = null)
     {
-        $this->setRequestUrl('/external-task/' . $externalTaskId . '/failure')
+        $this->setRequestUrl('external-task/' . $externalTaskId . '/failure')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($externalTaskRequest)
@@ -90,7 +90,7 @@ class ExternalTaskService extends BasicService
 
     public function unlock($externalTaskId)
     {
-        $this->setRequestUrl('/external-task/' . $externalTaskId . '/unlock')
+        $this->setRequestUrl('external-task/' . $externalTaskId . '/unlock')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->run();
@@ -100,7 +100,7 @@ class ExternalTaskService extends BasicService
 
     public function setPriority($externalTaskId, ExternalTaskRequest $externalTaskRequest = null)
     {
-        $this->setRequestUrl('/external-task/' . $externalTaskId . '/priority')
+        $this->setRequestUrl('external-task/' . $externalTaskId . '/priority')
             ->setRequestMethod('PUT')
             ->setRequestContentType('JSON')
             ->setRequestObject($externalTaskRequest)
@@ -111,7 +111,7 @@ class ExternalTaskService extends BasicService
 
     public function setRetries($externalTaskId, ExternalTaskRequest $externalTaskRequest = null)
     {
-        $this->setRequestUrl('/external-task/' . $externalTaskId . '/retries')
+        $this->setRequestUrl('external-task/' . $externalTaskId . '/retries')
             ->setRequestMethod('PUT')
             ->setRequestContentType('JSON')
             ->setRequestObject($externalTaskRequest)
@@ -122,7 +122,7 @@ class ExternalTaskService extends BasicService
 
     public function setRetriesAsync($externalTaskId, ExternalTaskRequest $externalTaskRequest = null)
     {
-        $this->setRequestUrl('/external-task/' . $externalTaskId . '/retries-async')
+        $this->setRequestUrl('external-task/' . $externalTaskId . '/retries-async')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($externalTaskRequest)
@@ -133,7 +133,7 @@ class ExternalTaskService extends BasicService
 
     public function extendLock($externalTaskId, ExternalTaskRequest $externalTaskRequest = null)
     {
-        $this->setRequestUrl('/external-task/' . $externalTaskId . '/extendLock')
+        $this->setRequestUrl('external-task/' . $externalTaskId . '/extendLock')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($externalTaskRequest)

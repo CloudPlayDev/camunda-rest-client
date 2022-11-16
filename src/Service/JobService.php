@@ -14,7 +14,7 @@ class JobService extends BasicService
 {
     public function getList(JobRequest $jobRequest = null)
     {
-        $this->setRequestUrl('/job')
+        $this->setRequestUrl('job')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($jobRequest)
@@ -25,7 +25,7 @@ class JobService extends BasicService
 
     public function getListCount(JobRequest $jobRequest = null)
     {
-        $this->setRequestUrl('/job/count')
+        $this->setRequestUrl('job/count')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($jobRequest)
@@ -36,7 +36,7 @@ class JobService extends BasicService
 
     public function getById($jobId)
     {
-        $this->setRequestUrl('/job/' . $jobId)
+        $this->setRequestUrl('job/' . $jobId)
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -46,7 +46,7 @@ class JobService extends BasicService
 
     public function execute($jobId)
     {
-        $this->setRequestUrl('/job/' . $jobId . '/execute')
+        $this->setRequestUrl('job/' . $jobId . '/execute')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->run();
@@ -56,7 +56,7 @@ class JobService extends BasicService
 
     public function updateDueDate($jobId, JobRequest $jobRequest = null)
     {
-        $this->setRequestUrl('/job/' . $jobId . '/execute')
+        $this->setRequestUrl('job/' . $jobId . '/execute')
             ->setRequestMethod('PUT')
             ->setRequestContentType('JSON')
             ->setRequestObject($jobRequest)
@@ -67,7 +67,7 @@ class JobService extends BasicService
 
     public function updatePriority($jobId, JobRequest $jobRequest = null)
     {
-        $this->setRequestUrl('/job/' . $jobId . '/priority')
+        $this->setRequestUrl('job/' . $jobId . '/priority')
             ->setRequestMethod('PUT')
             ->setRequestContentType('JSON')
             ->setRequestObject($jobRequest)
@@ -78,7 +78,7 @@ class JobService extends BasicService
 
     public function updateRetries($jobId, JobRequest $jobRequest = null)
     {
-        $this->setRequestUrl('/job/' . $jobId . '/retries')
+        $this->setRequestUrl('job/' . $jobId . '/retries')
             ->setRequestMethod('PUT')
             ->setRequestContentType('JSON')
             ->setRequestObject($jobRequest)
@@ -89,7 +89,7 @@ class JobService extends BasicService
 
     public function getStacktrace($jobId)
     {
-        $this->setRequestUrl('/job/' . $jobId . '/stacktrace')
+        $this->setRequestUrl('job/' . $jobId . '/stacktrace')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -102,7 +102,7 @@ class JobService extends BasicService
         $jobRequest = new JobRequest();
         $jobRequest->set('suspended', false);
 
-        $this->setRequestUrl('/job/' . $jobId . '/suspended')
+        $this->setRequestUrl('job/' . $jobId . '/suspended')
             ->setRequestMethod('PUT')
             ->setRequestContentType('JSON')
             ->setRequestObject($jobRequest)
@@ -116,7 +116,7 @@ class JobService extends BasicService
         $jobRequest = new JobRequest();
         $jobRequest->set('suspended', true);
 
-        $this->setRequestUrl('/job/' . $jobId . '/suspended')
+        $this->setRequestUrl('job/' . $jobId . '/suspended')
             ->setRequestMethod('PUT')
             ->setRequestContentType('JSON')
             ->setRequestObject($jobRequest)
@@ -127,7 +127,7 @@ class JobService extends BasicService
 
     public function activateOrSuspend(JobRequest $jobRequest)
     {
-        $this->setRequestUrl('/job/suspended')
+        $this->setRequestUrl('job/suspended')
             ->setRequestMethod('PUT')
             ->setRequestContentType('JSON')
             ->setRequestObject($jobRequest)
@@ -138,7 +138,7 @@ class JobService extends BasicService
 
     public function setRetriesAsync(JobRequest $jobRequest = null)
     {
-        $this->setRequestUrl('/job/retries')
+        $this->setRequestUrl('job/retries')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($jobRequest)
@@ -149,7 +149,7 @@ class JobService extends BasicService
 
     public function delete($jobId)
     {
-        $this->setRequestUrl('/job/' . $jobId)
+        $this->setRequestUrl('job/' . $jobId)
             ->setRequestMethod('DELETE')
             ->setRequestContentType('QUERY')
             ->run();

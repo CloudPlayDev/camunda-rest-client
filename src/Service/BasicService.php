@@ -39,9 +39,9 @@ class BasicService
     private $requestContentType = 'query';
 
     /**
-     * @var BasicRequest request entity that contains necessary properties
+     * @var ?BasicRequest request entity that contains necessary properties
      */
-    private $requestObject;
+    private ?BasicRequest $requestObject = null;
 
     /**
      * @var int response code
@@ -63,7 +63,7 @@ class BasicService
     public function __construct(string $restApiUrl = '', ?string $apiUser = null, ?string $apiPassword = null)
     {
         $clientSettings = [
-            'base_uri' => rtrim(trim($restApiUrl), '/'),
+            'base_uri' => trim($restApiUrl),
         ];
         if($apiUser && $apiPassword) {
             $clientSettings['auth'] = [$apiUser, $apiPassword];
@@ -143,10 +143,10 @@ class BasicService
     /**
      * set request object.
      *
-     * @param BasicRequest $requestObject
+     * @param BasicRequest|null $requestObject
      * @return $this
      */
-    public function setRequestObject(BasicRequest $requestObject): self
+    public function setRequestObject(BasicRequest $requestObject = null): self
     {
         $this->requestObject = $requestObject;
         return $this;

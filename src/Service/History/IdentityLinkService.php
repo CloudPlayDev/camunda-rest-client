@@ -17,7 +17,7 @@ class IdentityLinkService extends BasicService
 {
     public function getList(IdentityLinkRequest $identityRequest = null)
     {
-        $this->setRequestUrl('/history/identity-link-log')
+        $this->setRequestUrl('history/identity-link-log')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($identityRequest)
@@ -28,7 +28,7 @@ class IdentityLinkService extends BasicService
 
     public function getListCount(IdentityLinkRequest $identityRequest = null)
     {
-        $this->setRequestUrl('/history/identity-link-log/count')
+        $this->setRequestUrl('history/identity-link-log/count')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($identityRequest)

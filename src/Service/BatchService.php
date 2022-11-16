@@ -14,7 +14,7 @@ class BatchService extends BasicService
 {
     public function getList(BatchRequest $batchRequest = null)
     {
-        $this->setRequestUrl('/batch')
+        $this->setRequestUrl('batch')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($batchRequest)
@@ -25,7 +25,7 @@ class BatchService extends BasicService
 
     public function getListCount(BatchRequest $batchRequest = null)
     {
-        $this->setRequestUrl('/batch/count')
+        $this->setRequestUrl('batch/count')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($batchRequest)
@@ -36,7 +36,7 @@ class BatchService extends BasicService
 
     public function getById($batchId)
     {
-        $this->setRequestUrl('/batch/' . $batchId)
+        $this->setRequestUrl('batch/' . $batchId)
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -49,7 +49,7 @@ class BatchService extends BasicService
         $batchRequest = new BatchRequest();
         $batchRequest->set('suspended', false);
 
-        $this->setRequestUrl('/batch/' . $batchId . '/suspended')
+        $this->setRequestUrl('batch/' . $batchId . '/suspended')
             ->setRequestMethod('PUT')
             ->setRequestContentType('JSON')
             ->setRequestObject($batchRequest)
@@ -63,7 +63,7 @@ class BatchService extends BasicService
         $batchRequest = new BatchRequest();
         $batchRequest->set('suspended', true);
 
-        $this->setRequestUrl('/batch/' . $batchId . '/suspended')
+        $this->setRequestUrl('batch/' . $batchId . '/suspended')
             ->setRequestMethod('PUT')
             ->setRequestContentType('JSON')
             ->setRequestObject($batchRequest)
@@ -74,7 +74,7 @@ class BatchService extends BasicService
 
     public function deleteById($batchId)
     {
-        $this->setRequestUrl('/batch/' . $batchId)
+        $this->setRequestUrl('batch/' . $batchId)
             ->setRequestMethod('DELETE')
             ->setRequestContentType('QUERY')
             ->run();
@@ -84,7 +84,7 @@ class BatchService extends BasicService
 
     public function getStatistics(BatchRequest $batchRequest = null)
     {
-        $this->setRequestUrl('/batch/statistics')
+        $this->setRequestUrl('batch/statistics')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($batchRequest)
@@ -95,7 +95,7 @@ class BatchService extends BasicService
 
     public function getStatisticsCount(BatchRequest $batchRequest = null)
     {
-        $this->setRequestUrl('/batch/statistics/count')
+        $this->setRequestUrl('batch/statistics/count')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($batchRequest)

@@ -14,7 +14,7 @@ class GroupService extends BasicService
 {
     public function createGroupMember($groupId, $userId)
     {
-        $this->setRequestUrl('/group/' . $groupId . '/members/' . $userId)
+        $this->setRequestUrl('group/' . $groupId . '/members/' . $userId)
             ->setRequestMethod('PUT')
             ->setRequestContentType('JQUERY')
             ->run();
@@ -24,7 +24,7 @@ class GroupService extends BasicService
 
     public function deleteGroupMember($groupId, $userId)
     {
-        $this->setRequestUrl('/group/' . $groupId . '/members/' . $userId)
+        $this->setRequestUrl('group/' . $groupId . '/members/' . $userId)
             ->setRequestMethod('DELETE')
             ->setRequestContentType('JQUERY')
             ->run();
@@ -34,7 +34,7 @@ class GroupService extends BasicService
 
     public function groupMemberOptions($groupId)
     {
-        $this->setRequestUrl('/group/' . $groupId . '/members/')
+        $this->setRequestUrl('group/' . $groupId . '/members/')
             ->setRequestMethod('OPTIONS')
             ->setRequestContentType('JQUERY')
             ->run();
@@ -44,7 +44,7 @@ class GroupService extends BasicService
 
     public function getList(GroupRequest $groupRequest = null)
     {
-        $this->setRequestUrl('/group')
+        $this->setRequestUrl('group')
             ->setRequestMethod('GET')
             ->setRequestContentType('JQUERY')
             ->setRequestObject($groupRequest)
@@ -55,7 +55,7 @@ class GroupService extends BasicService
 
     public function getListCount(GroupRequest $groupRequest = null)
     {
-        $this->setRequestUrl('/group/count')
+        $this->setRequestUrl('group/count')
             ->setRequestMethod('GET')
             ->setRequestContentType('JQUERY')
             ->setRequestObject($groupRequest)
@@ -66,7 +66,7 @@ class GroupService extends BasicService
 
     public function getById($groupId)
     {
-        $this->setRequestUrl('/group/' . $groupId)
+        $this->setRequestUrl('group/' . $groupId)
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -76,7 +76,7 @@ class GroupService extends BasicService
 
     public function create(GroupRequest $groupRequest = null)
     {
-        $this->setRequestUrl('/group/create')
+        $this->setRequestUrl('group/create')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($groupRequest)
@@ -87,7 +87,7 @@ class GroupService extends BasicService
 
     public function update($groupId, GroupRequest $groupRequest = null)
     {
-        $this->setRequestUrl('/group/' . $groupId)
+        $this->setRequestUrl('group/' . $groupId)
             ->setRequestMethod('PUT')
             ->setRequestContentType('JSON')
             ->setRequestObject($groupRequest)
@@ -98,7 +98,7 @@ class GroupService extends BasicService
 
     public function options($groupId)
     {
-        $this->setRequestUrl('/group/' . $groupId)
+        $this->setRequestUrl('group/' . $groupId)
             ->setRequestMethod('OPTIONS')
             ->setRequestContentType('QUERY')
             ->run();
@@ -108,7 +108,7 @@ class GroupService extends BasicService
 
     public function delete($groupId)
     {
-        $this->setRequestUrl('/group/' . $groupId)
+        $this->setRequestUrl('group/' . $groupId)
             ->setRequestMethod('DELETE')
             ->setRequestContentType('QUERY')
             ->run();

@@ -14,7 +14,7 @@ class JobDefinitionService extends BasicService
 {
     public function getList(JobDefinitionRequest $jobDefinitionRequest = null)
     {
-        $this->setRequestUrl('/job-definition')
+        $this->setRequestUrl('job-definition')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($jobDefinitionRequest)
@@ -25,7 +25,7 @@ class JobDefinitionService extends BasicService
 
     public function getListCount(JobDefinitionRequest $jobDefinitionRequest = null)
     {
-        $this->setRequestUrl('/job-definition/count')
+        $this->setRequestUrl('job-definition/count')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($jobDefinitionRequest)
@@ -36,7 +36,7 @@ class JobDefinitionService extends BasicService
 
     public function getById($jobDefinitionId)
     {
-        $this->setRequestUrl('/job-definition/' . $jobDefinitionId)
+        $this->setRequestUrl('job-definition/' . $jobDefinitionId)
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -46,7 +46,7 @@ class JobDefinitionService extends BasicService
 
     public function setPriority($jobDefinitionId, JobDefinitionRequest $jobDefinitionRequest = null)
     {
-        $this->setRequestUrl('/job-definition/' . $jobDefinitionId . '/jobPriority')
+        $this->setRequestUrl('job-definition/' . $jobDefinitionId . '/jobPriority')
             ->setRequestMethod('PUT')
             ->setRequestContentType('JSON')
             ->setRequestObject($jobDefinitionRequest)
@@ -57,7 +57,7 @@ class JobDefinitionService extends BasicService
 
     public function setRetries($jobDefinitionId, JobDefinitionRequest $jobDefinitionRequest = null)
     {
-        $this->setRequestUrl('/job-definition/' . $jobDefinitionId . '/retries')
+        $this->setRequestUrl('job-definition/' . $jobDefinitionId . '/retries')
             ->setRequestMethod('PUT')
             ->setRequestContentType('JSON')
             ->setRequestObject($jobDefinitionRequest)
@@ -71,7 +71,7 @@ class JobDefinitionService extends BasicService
         $jobDefinitionRequest = new JobDefinitionRequest();
         $jobDefinitionRequest->set('suspended', false);
 
-        $this->setRequestUrl('/job-definition/' . $jobDefinitionId . '/suspended')
+        $this->setRequestUrl('job-definition/' . $jobDefinitionId . '/suspended')
             ->setRequestMethod('PUT')
             ->setRequestContentType('JSON')
             ->setRequestObject($jobDefinitionRequest)
@@ -85,7 +85,7 @@ class JobDefinitionService extends BasicService
         $jobDefinitionRequest = new JobDefinitionRequest();
         $jobDefinitionRequest->set('suspended', true);
 
-        $this->setRequestUrl('/job-definition/' . $jobDefinitionId . '/suspended')
+        $this->setRequestUrl('job-definition/' . $jobDefinitionId . '/suspended')
             ->setRequestMethod('PUT')
             ->setRequestContentType('JSON')
             ->setRequestObject($jobDefinitionRequest)
@@ -96,7 +96,7 @@ class JobDefinitionService extends BasicService
 
     public function activateOrSuspend(JobDefinitionRequest $jobDefinitionRequest)
     {
-        $this->setRequestUrl('/job-definition/suspended')
+        $this->setRequestUrl('job-definition/suspended')
             ->setRequestMethod('PUT')
             ->setRequestContentType('JSON')
             ->setRequestObject($jobDefinitionRequest)

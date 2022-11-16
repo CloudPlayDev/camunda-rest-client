@@ -15,7 +15,7 @@ class ActivityInstanceService extends BasicService
 {
     public function getList(ActivityInstanceRequest $activityInstanceRequest = null)
     {
-        $this->setRequestUrl('/history/activity-instance')
+        $this->setRequestUrl('history/activity-instance')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($activityInstanceRequest)
@@ -26,7 +26,7 @@ class ActivityInstanceService extends BasicService
 
     public function getListCount(ActivityInstanceRequest $activityInstanceRequest = null)
     {
-        $this->setRequestUrl('/history/activity-instance/count')
+        $this->setRequestUrl('history/activity-instance/count')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($activityInstanceRequest)
@@ -37,7 +37,7 @@ class ActivityInstanceService extends BasicService
 
     public function getById($activityInstanceId)
     {
-        $this->setRequestUrl('/history/activity-instance/' . $activityInstanceId)
+        $this->setRequestUrl('history/activity-instance/' . $activityInstanceId)
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();

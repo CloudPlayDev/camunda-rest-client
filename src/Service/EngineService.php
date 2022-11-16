@@ -14,7 +14,7 @@ class EngineService extends BasicService
 {
     public function getList(EngineRequest $engineRequest = null)
     {
-        $this->setRequestUrl('/engine')
+        $this->setRequestUrl('engine')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($engineRequest)

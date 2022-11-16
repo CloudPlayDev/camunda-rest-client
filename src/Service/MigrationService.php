@@ -14,7 +14,7 @@ class MigrationService extends BasicService
 {
     public function generate(MigrationRequest $migrationRequest = null)
     {
-        $this->setRequestUrl('/migration/generate')
+        $this->setRequestUrl('migration/generate')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($migrationRequest)
@@ -25,7 +25,7 @@ class MigrationService extends BasicService
 
     public function validate(MigrationRequest $migrationRequest = null)
     {
-        $this->setRequestUrl('/migration/validate')
+        $this->setRequestUrl('migration/validate')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($migrationRequest)
@@ -36,7 +36,7 @@ class MigrationService extends BasicService
 
     public function execute(MigrationRequest $migrationRequest = null)
     {
-        $this->setRequestUrl('/migration/execute')
+        $this->setRequestUrl('migration/execute')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($migrationRequest)
@@ -47,7 +47,7 @@ class MigrationService extends BasicService
 
     public function executeAsync(MigrationRequest $migrationRequest = null)
     {
-        $this->setRequestUrl('/migration/executeAsync')
+        $this->setRequestUrl('migration/executeAsync')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($migrationRequest)

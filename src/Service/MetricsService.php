@@ -14,7 +14,7 @@ class MetricsService extends BasicService
 {
     public function getList(MetricsRequest $metricsRequest = null)
     {
-        $this->setRequestUrl('/metrics')
+        $this->setRequestUrl('metrics')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($metricsRequest)
@@ -25,7 +25,7 @@ class MetricsService extends BasicService
 
     public function getListCount($metricsName, MetricsRequest $metricsRequest = null)
     {
-        $this->setRequestUrl('/metrics/' . $metricsName . '/sum')
+        $this->setRequestUrl('metrics/' . $metricsName . '/sum')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($metricsRequest)

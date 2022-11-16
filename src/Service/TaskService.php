@@ -14,7 +14,7 @@ class TaskService extends BasicService
 {
     public function getCommentList($taskId)
     {
-        $this->setRequestUrl('/task/' . $taskId . '/comment')
+        $this->setRequestUrl('task/' . $taskId . '/comment')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -24,7 +24,7 @@ class TaskService extends BasicService
 
     public function getComment($taskId, $commentId)
     {
-        $this->setRequestUrl('/task/' . $taskId . '/comment/' . $commentId)
+        $this->setRequestUrl('task/' . $taskId . '/comment/' . $commentId)
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -34,7 +34,7 @@ class TaskService extends BasicService
 
     public function createComment($taskId, $taskRequest = null)
     {
-        $this->setRequestUrl('/task/' . $taskId . '/comment/create')
+        $this->setRequestUrl('task/' . $taskId . '/comment/create')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($taskRequest)
@@ -45,7 +45,7 @@ class TaskService extends BasicService
 
     public function getIdentityLinks($taskId, $taskRequest = null)
     {
-        $this->setRequestUrl('/task/' . $taskId . '/identity-links')
+        $this->setRequestUrl('task/' . $taskId . '/identity-links')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($taskRequest)
@@ -56,7 +56,7 @@ class TaskService extends BasicService
 
     public function addIdentityLink($taskId, $taskRequest = null)
     {
-        $this->setRequestUrl('/task/' . $taskId . '/identity-links')
+        $this->setRequestUrl('task/' . $taskId . '/identity-links')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($taskRequest)
@@ -67,7 +67,7 @@ class TaskService extends BasicService
 
     public function deleteIdentityLink($taskId, $taskRequest = null)
     {
-        $this->setRequestUrl('/task/' . $taskId . '/identity-links/delete')
+        $this->setRequestUrl('task/' . $taskId . '/identity-links/delete')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($taskRequest)
@@ -78,7 +78,7 @@ class TaskService extends BasicService
 
     public function getById($taskId)
     {
-        $this->setRequestUrl('/task/' . $taskId)
+        $this->setRequestUrl('task/' . $taskId)
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run(true);
@@ -88,7 +88,7 @@ class TaskService extends BasicService
 
     public function getList(TaskRequest $taskRequest = null)
     {
-        $this->setRequestUrl('/task')
+        $this->setRequestUrl('task')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($taskRequest)
@@ -99,7 +99,7 @@ class TaskService extends BasicService
 
     public function getListCount(TaskRequest $taskRequest = null)
     {
-        $this->setRequestUrl('/task/count')
+        $this->setRequestUrl('task/count')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($taskRequest)
@@ -110,7 +110,7 @@ class TaskService extends BasicService
 
     public function getFormKey($taskId)
     {
-        $this->setRequestUrl('/task/' . $taskId . '/form')
+        $this->setRequestUrl('task/' . $taskId . '/form')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -120,7 +120,7 @@ class TaskService extends BasicService
 
     public function claim($taskId, TaskRequest $taskRequest = null)
     {
-        $this->setRequestUrl('/task/' . $taskId . '/claim')
+        $this->setRequestUrl('task/' . $taskId . '/claim')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($taskRequest)
@@ -131,7 +131,7 @@ class TaskService extends BasicService
 
     public function unclaim($taskId, TaskRequest $taskRequest = null)
     {
-        $this->setRequestUrl('/task/' . $taskId . '/unclaim')
+        $this->setRequestUrl('task/' . $taskId . '/unclaim')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($taskRequest)
@@ -142,18 +142,18 @@ class TaskService extends BasicService
 
     public function complete($taskId, TaskRequest $taskRequest = null)
     {
-        $this->setRequestUrl('/task/' . $taskId . '/complete')
+        $this->setRequestUrl('task/' . $taskId . '/complete')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($taskRequest)
             ->run();
 
-        return $this->getResponseCode() == 204 ? true : false;
+        return $this->getResponseCode() == 204;
     }
 
     public function submitForm($taskId, TaskRequest $taskRequest = null)
     {
-        $this->setRequestUrl('/task/' . $taskId . '/submit-form')
+        $this->setRequestUrl('task/' . $taskId . '/submit-form')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($taskRequest)
@@ -164,7 +164,7 @@ class TaskService extends BasicService
 
     public function resolve($taskId, TaskRequest $taskRequest = null)
     {
-        $this->setRequestUrl('/task/' . $taskId . '/resolve')
+        $this->setRequestUrl('task/' . $taskId . '/resolve')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($taskRequest)
@@ -175,7 +175,7 @@ class TaskService extends BasicService
 
     public function setAssignee($taskId, TaskRequest $taskRequest = null)
     {
-        $this->setRequestUrl('/task/' . $taskId . '/assignee')
+        $this->setRequestUrl('task/' . $taskId . '/assignee')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($taskRequest)
@@ -186,7 +186,7 @@ class TaskService extends BasicService
 
     public function delegate($taskId, TaskRequest $taskRequest = null)
     {
-        $this->setRequestUrl('/task/' . $taskId . '/delegate')
+        $this->setRequestUrl('task/' . $taskId . '/delegate')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($taskRequest)
@@ -197,7 +197,7 @@ class TaskService extends BasicService
 
     public function getRenderedForm($taskId)
     {
-        $this->setRequestUrl('/task/' . $taskId . '/rendered-form')
+        $this->setRequestUrl('task/' . $taskId . '/rendered-form')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -207,7 +207,7 @@ class TaskService extends BasicService
 
     public function getTaskFormVariables($taskId, TaskRequest $taskRequest = null)
     {
-        $this->setRequestUrl('/task/' . $taskId . '/form-variables')
+        $this->setRequestUrl('task/' . $taskId . '/form-variables')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($taskRequest)
@@ -218,7 +218,7 @@ class TaskService extends BasicService
 
     public function create(TaskRequest $taskRequest = null)
     {
-        $this->setRequestUrl('/task/create')
+        $this->setRequestUrl('task/create')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($taskRequest)
@@ -229,7 +229,7 @@ class TaskService extends BasicService
 
     public function update($taskId, TaskRequest $taskRequest = null)
     {
-        $this->setRequestUrl('/task/' . $taskId)
+        $this->setRequestUrl('task/' . $taskId)
             ->setRequestMethod('PUT')
             ->setRequestContentType('JSON')
             ->setRequestObject($taskRequest)

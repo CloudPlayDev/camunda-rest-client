@@ -14,7 +14,7 @@ class ProcessInstanceService extends BasicService
 {
     public function deleteVariable($processInstanceId, $variableName)
     {
-        $this->setRequestUrl('/process-instance/' . $processInstanceId . '/variables/' . $variableName)
+        $this->setRequestUrl('process-instance/' . $processInstanceId . '/variables/' . $variableName)
             ->setRequestMethod('DELETE')
             ->setRequestContentType('JSON')
             ->run();
@@ -27,7 +27,7 @@ class ProcessInstanceService extends BasicService
         $variableName,
         ProcessInstanceRequest $processInstanceRequest = null
     ) {
-        $this->setRequestUrl('/process-instance/' . $processInstanceId . '/variables/' . $variableName . '/data')
+        $this->setRequestUrl('process-instance/' . $processInstanceId . '/variables/' . $variableName . '/data')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($processInstanceRequest)
@@ -41,7 +41,7 @@ class ProcessInstanceService extends BasicService
         $variableName,
         ProcessInstanceRequest $processInstanceRequest = null
     ) {
-        $this->setRequestUrl('/process-instance/' . $processInstanceId . '/variables/' . $variableName)
+        $this->setRequestUrl('process-instance/' . $processInstanceId . '/variables/' . $variableName)
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($processInstanceRequest)
@@ -54,7 +54,7 @@ class ProcessInstanceService extends BasicService
         $processInstanceId,
         ProcessInstanceRequest $processInstanceRequest = null
     ) {
-        $this->setRequestUrl('/process-instance/' . $processInstanceId . '/variables/')
+        $this->setRequestUrl('process-instance/' . $processInstanceId . '/variables/')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($processInstanceRequest)
@@ -68,7 +68,7 @@ class ProcessInstanceService extends BasicService
         $variableName,
         ProcessInstanceRequest $processInstanceRequest = null
     ) {
-        $this->setRequestUrl('/process-instance/' . $processInstanceId . '/variables/' . $variableName)
+        $this->setRequestUrl('process-instance/' . $processInstanceId . '/variables/' . $variableName)
             ->setRequestMethod('PUT')
             ->setRequestContentType('JSON')
             ->setRequestObject($processInstanceRequest)
@@ -79,7 +79,7 @@ class ProcessInstanceService extends BasicService
 
     public function modifyVariable($processInstanceId, ProcessInstanceRequest $processInstanceRequest = null)
     {
-        $this->setRequestUrl('/process-instance/' . $processInstanceId . '/variables/')
+        $this->setRequestUrl('process-instance/' . $processInstanceId . '/variables/')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($processInstanceRequest)
@@ -90,7 +90,7 @@ class ProcessInstanceService extends BasicService
 
     public function delete($processInstanceId, ProcessInstanceRequest $processInstanceRequest = null)
     {
-        $this->setRequestUrl('/process-instance/' . $processInstanceId)
+        $this->setRequestUrl('process-instance/' . $processInstanceId)
             ->setRequestMethod('DELETE')
             ->setRequestContentType('QUERY')
             ->setRequestObject($processInstanceRequest)
@@ -101,7 +101,7 @@ class ProcessInstanceService extends BasicService
 
     public function getActivityInstance($processInstanceId)
     {
-        $this->setRequestUrl('/process-instance/' . $processInstanceId . '/activity-instances')
+        $this->setRequestUrl('process-instance/' . $processInstanceId . '/activity-instances')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -111,7 +111,7 @@ class ProcessInstanceService extends BasicService
 
     public function getListCount(ProcessInstanceRequest $processInstanceRequest = null)
     {
-        $this->setRequestUrl('/process-instance/count')
+        $this->setRequestUrl('process-instance/count')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($processInstanceRequest)
@@ -122,7 +122,7 @@ class ProcessInstanceService extends BasicService
 
     public function getList(ProcessInstanceRequest $processInstanceRequest = null)
     {
-        $this->setRequestUrl('/process-instance')
+        $this->setRequestUrl('process-instance')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($processInstanceRequest)
@@ -133,7 +133,7 @@ class ProcessInstanceService extends BasicService
 
     public function getById($processInstanceId)
     {
-        $this->setRequestUrl('/process-instance/' . $processInstanceId)
+        $this->setRequestUrl('process-instance/' . $processInstanceId)
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -143,7 +143,7 @@ class ProcessInstanceService extends BasicService
 
     public function modify($processInstanceId, ProcessInstanceRequest $processInstanceRequest = null)
     {
-        $this->setRequestUrl('/process-instance/' . $processInstanceId . '/modification')
+        $this->setRequestUrl('process-instance/' . $processInstanceId . '/modification')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($processInstanceRequest)
@@ -154,7 +154,7 @@ class ProcessInstanceService extends BasicService
 
     public function deleteAsync(ProcessInstanceRequest $processInstanceRequest = null)
     {
-        $this->setRequestUrl('/process-instance/delete')
+        $this->setRequestUrl('process-instance/delete')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($processInstanceRequest)
@@ -180,7 +180,7 @@ class ProcessInstanceService extends BasicService
 
     public function activateOrSuspendById($processInstanceId, ProcessInstanceRequest $processInstanceRequest = null)
     {
-        $this->setRequestUrl('/process-instance/' . $processInstanceId . '/suspended')
+        $this->setRequestUrl('process-instance/' . $processInstanceId . '/suspended')
             ->setRequestMethod('PUT')
             ->setRequestContentType('JSON')
             ->setRequestObject($processInstanceRequest)
@@ -191,7 +191,7 @@ class ProcessInstanceService extends BasicService
 
     public function activateOrSuspend(ProcessInstanceRequest $processInstanceRequest = null)
     {
-        $this->setRequestUrl('/process-instance/suspended')
+        $this->setRequestUrl('process-instance/suspended')
             ->setRequestMethod('PUT')
             ->setRequestContentType('JSON')
             ->setRequestObject($processInstanceRequest)

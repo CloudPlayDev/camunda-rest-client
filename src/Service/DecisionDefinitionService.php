@@ -14,7 +14,7 @@ class DecisionDefinitionService extends BasicService
 {
     public function getList(DecisionDefinitionRequest $decisionDefinitionRequest = null)
     {
-        $this->setRequestUrl('/decision-definition')
+        $this->setRequestUrl('decision-definition')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($decisionDefinitionRequest)
@@ -25,7 +25,7 @@ class DecisionDefinitionService extends BasicService
 
     public function getListCount(DecisionDefinitionRequest $decisionDefinitionRequest = null)
     {
-        $this->setRequestUrl('/decision-definition/count')
+        $this->setRequestUrl('decision-definition/count')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($decisionDefinitionRequest)
@@ -36,7 +36,7 @@ class DecisionDefinitionService extends BasicService
 
     public function getById($decisionDefinitionId)
     {
-        $this->setRequestUrl('/decision-definition/' . $decisionDefinitionId)
+        $this->setRequestUrl('decision-definition/' . $decisionDefinitionId)
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -46,7 +46,7 @@ class DecisionDefinitionService extends BasicService
 
     public function getXMLById($decisionDefinitionId)
     {
-        $this->setRequestUrl('/decision-definition/' . $decisionDefinitionId . '/xml')
+        $this->setRequestUrl('decision-definition/' . $decisionDefinitionId . '/xml')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -70,7 +70,7 @@ class DecisionDefinitionService extends BasicService
 
     public function getDiagramById($decisionDefinitionId)
     {
-        $this->setRequestUrl('/decision-definition/' . $decisionDefinitionId . '/diagram')
+        $this->setRequestUrl('decision-definition/' . $decisionDefinitionId . '/diagram')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -94,7 +94,7 @@ class DecisionDefinitionService extends BasicService
 
     public function evaluateById($decisionDefinitionId, DecisionDefinitionRequest $decisionDefinitionRequest = null)
     {
-        $this->setRequestUrl('/decision-definition/' . $decisionDefinitionId . '/evaluate')
+        $this->setRequestUrl('decision-definition/' . $decisionDefinitionId . '/evaluate')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($decisionDefinitionRequest)
@@ -123,7 +123,7 @@ class DecisionDefinitionService extends BasicService
 
     public function updateHTTLById($decisionDefinitionId, DecisionDefinitionRequest $decisionDefinitionRequest = null)
     {
-        $this->setRequestUrl('/decision-definition/' . $decisionDefinitionId . '/history-time-to-live')
+        $this->setRequestUrl('decision-definition/' . $decisionDefinitionId . '/history-time-to-live')
             ->setRequestMethod('PUT')
             ->setRequestContentType('JSON')
             ->setRequestObject($decisionDefinitionRequest)

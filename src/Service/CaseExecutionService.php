@@ -14,7 +14,7 @@ class CaseExecutionService extends BasicService
 {
     public function getLocalVariable($caseExecutionId, $variableName, CaseDefinitionRequest $caseDefinitionRequest)
     {
-        $this->setRequestUrl('/case-execution/' . $caseExecutionId . '/localVariables/' . $variableName)
+        $this->setRequestUrl('case-execution/' . $caseExecutionId . '/localVariables/' . $variableName)
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($caseDefinitionRequest)
@@ -25,7 +25,7 @@ class CaseExecutionService extends BasicService
 
     public function getLocalVariableData($caseExecutionId, $variableName)
     {
-        $this->setRequestUrl('/case-execution/' . $caseExecutionId . '/localVariables/' . $variableName . '/data')
+        $this->setRequestUrl('case-execution/' . $caseExecutionId . '/localVariables/' . $variableName . '/data')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -35,7 +35,7 @@ class CaseExecutionService extends BasicService
 
     public function getLocalVariableList($caseExecutionId, CaseDefinitionRequest $caseDefinitionRequest)
     {
-        $this->setRequestUrl('/case-execution/' . $caseExecutionId . '/localVariables')
+        $this->setRequestUrl('case-execution/' . $caseExecutionId . '/localVariables')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($caseDefinitionRequest)
@@ -46,7 +46,7 @@ class CaseExecutionService extends BasicService
 
     public function updateLocalVariable($caseExecutionId, $variableName, CaseDefinitionRequest $caseDefinitionRequest)
     {
-        $this->setRequestUrl('/case-execution/' . $caseExecutionId . '/localVariables/' . $variableName)
+        $this->setRequestUrl('case-execution/' . $caseExecutionId . '/localVariables/' . $variableName)
             ->setRequestMethod('PUT')
             ->setRequestContentType('JSON')
             ->setRequestObject($caseDefinitionRequest)
@@ -60,7 +60,7 @@ class CaseExecutionService extends BasicService
         $variableName,
         CaseDefinitionRequest $caseDefinitionRequest
     ) {
-        $this->setRequestUrl('/case-execution/' . $caseExecutionId . '/localVariables/' . $variableName . '/data')
+        $this->setRequestUrl('case-execution/' . $caseExecutionId . '/localVariables/' . $variableName . '/data')
             ->setRequestMethod('POST')
             ->setRequestContentType('MULTIPART')
             ->setRequestObject($caseDefinitionRequest)
@@ -71,7 +71,7 @@ class CaseExecutionService extends BasicService
 
     public function modifyLocalVariable($caseExecutionId, CaseDefinitionRequest $caseDefinitionRequest)
     {
-        $this->setRequestUrl('/case-execution/' . $caseExecutionId . '/localVariables/')
+        $this->setRequestUrl('case-execution/' . $caseExecutionId . '/localVariables/')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($caseDefinitionRequest)
@@ -82,7 +82,7 @@ class CaseExecutionService extends BasicService
 
     public function deleteLocalVariable($caseExecutionId, $variableName)
     {
-        $this->setRequestUrl('/case-execution/' . $caseExecutionId . '/localVariables/' . $variableName)
+        $this->setRequestUrl('case-execution/' . $caseExecutionId . '/localVariables/' . $variableName)
             ->setRequestMethod('DELETE')
             ->setRequestContentType('JSON')
             ->run();
@@ -92,7 +92,7 @@ class CaseExecutionService extends BasicService
 
     public function getVariable($caseExecutionId, $variableName, CaseDefinitionRequest $caseDefinitionRequest = null)
     {
-        $this->setRequestUrl('/case-execution/' . $caseExecutionId . '/variables/' . $variableName)
+        $this->setRequestUrl('case-execution/' . $caseExecutionId . '/variables/' . $variableName)
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($caseDefinitionRequest)
@@ -103,7 +103,7 @@ class CaseExecutionService extends BasicService
 
     public function getVariableData($caseExecutionId, $variableName)
     {
-        $this->setRequestUrl('/case-execution/' . $caseExecutionId . '/variables/' . $variableName . '/data')
+        $this->setRequestUrl('case-execution/' . $caseExecutionId . '/variables/' . $variableName . '/data')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -113,7 +113,7 @@ class CaseExecutionService extends BasicService
 
     public function getVariableList($caseExecutionId, CaseDefinitionRequest $caseDefinitionRequest = null)
     {
-        $this->setRequestUrl('/case-execution/' . $caseExecutionId . '/variables')
+        $this->setRequestUrl('case-execution/' . $caseExecutionId . '/variables')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($caseDefinitionRequest)
@@ -124,7 +124,7 @@ class CaseExecutionService extends BasicService
 
     public function updateVariable($caseExecutionId, $variableName, CaseDefinitionRequest $caseDefinitionRequest = null)
     {
-        $this->setRequestUrl('/case-execution/' . $caseExecutionId . '/variables/' . $variableName)
+        $this->setRequestUrl('case-execution/' . $caseExecutionId . '/variables/' . $variableName)
             ->setRequestMethod('PUT')
             ->setRequestContentType('JSON')
             ->setRequestObject($caseDefinitionRequest)
@@ -138,7 +138,7 @@ class CaseExecutionService extends BasicService
         $variableName,
         CaseDefinitionRequest $caseDefinitionRequest = null
     ) {
-        $this->setRequestUrl('/case-execution/' . $caseExecutionId . '/variables/' . $variableName . '/data')
+        $this->setRequestUrl('case-execution/' . $caseExecutionId . '/variables/' . $variableName . '/data')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($caseDefinitionRequest)
@@ -149,7 +149,7 @@ class CaseExecutionService extends BasicService
 
     public function modifyVariable($caseExecutionId, CaseDefinitionRequest $caseDefinitionRequest = null)
     {
-        $this->setRequestUrl('/case-execution/' . $caseExecutionId . '/variables/')
+        $this->setRequestUrl('case-execution/' . $caseExecutionId . '/variables/')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($caseDefinitionRequest)
@@ -160,7 +160,7 @@ class CaseExecutionService extends BasicService
 
     public function deleteVariable($caseExecutionId, $variableName)
     {
-        $this->setRequestUrl('/case-execution/' . $caseExecutionId . '/variables/' . $variableName)
+        $this->setRequestUrl('case-execution/' . $caseExecutionId . '/variables/' . $variableName)
             ->setRequestMethod('DELETE')
             ->setRequestContentType('JSON')
             ->run();
@@ -170,7 +170,7 @@ class CaseExecutionService extends BasicService
 
     public function getList(CaseDefinitionRequest $caseDefinitionRequest = null)
     {
-        $this->setRequestUrl('/case-execution')
+        $this->setRequestUrl('case-execution')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($caseDefinitionRequest)
@@ -181,7 +181,7 @@ class CaseExecutionService extends BasicService
 
     public function getListCount(CaseDefinitionRequest $caseDefinitionRequest = null)
     {
-        $this->setRequestUrl('/case-execution/count')
+        $this->setRequestUrl('case-execution/count')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($caseDefinitionRequest)
@@ -192,7 +192,7 @@ class CaseExecutionService extends BasicService
 
     public function getById($caseExecutionId)
     {
-        $this->setRequestUrl('/case-execution/' . $caseExecutionId)
+        $this->setRequestUrl('case-execution/' . $caseExecutionId)
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -202,7 +202,7 @@ class CaseExecutionService extends BasicService
 
     public function start($caseExecutionId, CaseDefinitionRequest $caseDefinitionRequest = null)
     {
-        $this->setRequestUrl('/case-execution/' . $caseExecutionId . '/manual-start')
+        $this->setRequestUrl('case-execution/' . $caseExecutionId . '/manual-start')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($caseDefinitionRequest)
@@ -213,7 +213,7 @@ class CaseExecutionService extends BasicService
 
     public function complete($caseExecutionId, CaseDefinitionRequest $caseDefinitionRequest = null)
     {
-        $this->setRequestUrl('/case-execution/' . $caseExecutionId . '/complete')
+        $this->setRequestUrl('case-execution/' . $caseExecutionId . '/complete')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($caseDefinitionRequest)
@@ -224,7 +224,7 @@ class CaseExecutionService extends BasicService
 
     public function disable($caseExecutionId, CaseDefinitionRequest $caseDefinitionRequest = null)
     {
-        $this->setRequestUrl('/case-execution/' . $caseExecutionId . '/disable')
+        $this->setRequestUrl('case-execution/' . $caseExecutionId . '/disable')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($caseDefinitionRequest)
@@ -235,7 +235,7 @@ class CaseExecutionService extends BasicService
 
     public function reEnable($caseExecutionId, CaseDefinitionRequest $caseDefinitionRequest = null)
     {
-        $this->setRequestUrl('/case-execution/' . $caseExecutionId . '/reenable')
+        $this->setRequestUrl('case-execution/' . $caseExecutionId . '/reenable')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($caseDefinitionRequest)
@@ -246,7 +246,7 @@ class CaseExecutionService extends BasicService
 
     public function terminate($caseExecutionId, CaseDefinitionRequest $caseDefinitionRequest = null)
     {
-        $this->setRequestUrl('/case-execution/' . $caseExecutionId . '/terminate')
+        $this->setRequestUrl('case-execution/' . $caseExecutionId . '/terminate')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($caseDefinitionRequest)

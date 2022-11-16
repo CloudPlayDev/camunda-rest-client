@@ -14,7 +14,7 @@ class DecisionRequirementsDefinitionService extends BasicService
 {
     public function getList(DecisionDefinitionRequest $decisionDefinitionRequest = null)
     {
-        $this->setRequestUrl('/decision-requirements-definition')
+        $this->setRequestUrl('decision-requirements-definition')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($decisionDefinitionRequest)
@@ -25,7 +25,7 @@ class DecisionRequirementsDefinitionService extends BasicService
 
     public function getListCount(DecisionDefinitionRequest $decisionDefinitionRequest = null)
     {
-        $this->setRequestUrl('/decision-requirements-definition/count')
+        $this->setRequestUrl('decision-requirements-definition/count')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($decisionDefinitionRequest)
@@ -36,7 +36,7 @@ class DecisionRequirementsDefinitionService extends BasicService
 
     public function getById($decisionDefinitionId)
     {
-        $this->setRequestUrl('/decision-requirements-definition/' . $decisionDefinitionId)
+        $this->setRequestUrl('decision-requirements-definition/' . $decisionDefinitionId)
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -59,7 +59,7 @@ class DecisionRequirementsDefinitionService extends BasicService
 
     public function getXMLById($decisionDefinitionId)
     {
-        $this->setRequestUrl('/decision-requirements-definition/' . $decisionDefinitionId . '/xml')
+        $this->setRequestUrl('decision-requirements-definition/' . $decisionDefinitionId . '/xml')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -83,7 +83,7 @@ class DecisionRequirementsDefinitionService extends BasicService
 
     public function getDiagramById($decisionDefinitionId)
     {
-        $this->setRequestUrl('/decision-requirements-definition/' . $decisionDefinitionId . '/diagram')
+        $this->setRequestUrl('decision-requirements-definition/' . $decisionDefinitionId . '/diagram')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();

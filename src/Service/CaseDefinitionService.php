@@ -14,7 +14,7 @@ class CaseDefinitionService extends BasicService
 {
     public function getList(CaseDefinitionRequest $caseDefinitionRequest = null)
     {
-        $this->setRequestUrl('/case-definition')
+        $this->setRequestUrl('case-definition')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($caseDefinitionRequest)
@@ -25,7 +25,7 @@ class CaseDefinitionService extends BasicService
 
     public function getListCount(CaseDefinitionRequest $caseDefinitionRequest = null)
     {
-        $this->setRequestUrl('/case-definition/count')
+        $this->setRequestUrl('case-definition/count')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($caseDefinitionRequest)
@@ -36,7 +36,7 @@ class CaseDefinitionService extends BasicService
 
     public function getById($caseDefinitionId)
     {
-        $this->setRequestUrl('/case-definition/' . $caseDefinitionId)
+        $this->setRequestUrl('case-definition/' . $caseDefinitionId)
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -59,7 +59,7 @@ class CaseDefinitionService extends BasicService
 
     public function getXMLById($caseDefinitionId)
     {
-        $this->setRequestUrl('/case-definition/' . $caseDefinitionId . '/xml')
+        $this->setRequestUrl('case-definition/' . $caseDefinitionId . '/xml')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -83,7 +83,7 @@ class CaseDefinitionService extends BasicService
 
     public function getDiagramById($caseDefinitionId)
     {
-        $this->setRequestUrl('/case-definition/' . $caseDefinitionId . '/diagram')
+        $this->setRequestUrl('case-definition/' . $caseDefinitionId . '/diagram')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -107,7 +107,7 @@ class CaseDefinitionService extends BasicService
 
     public function createInstanceById($caseDefinitionId, CaseDefinitionRequest $caseDefinitionRequest = null)
     {
-        $this->setRequestUrl('/case-definition/' . $caseDefinitionId . '/create')
+        $this->setRequestUrl('case-definition/' . $caseDefinitionId . '/create')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($caseDefinitionRequest)
@@ -137,7 +137,7 @@ class CaseDefinitionService extends BasicService
 
     public function updateHTTLById($caseDefinitionId, CaseDefinitionRequest $caseDefinitionRequest = null)
     {
-        $this->setRequestUrl('/case-definition/' . $caseDefinitionId . '/history-time-to-live')
+        $this->setRequestUrl('case-definition/' . $caseDefinitionId . '/history-time-to-live')
             ->setRequestMethod('PUT')
             ->setRequestContentType('JSON')
             ->setRequestObject($caseDefinitionRequest)

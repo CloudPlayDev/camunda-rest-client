@@ -14,7 +14,7 @@ class ModificationService extends BasicService
 {
     public function executeModify(ModificationRequest $modificationRequest)
     {
-        $this->setRequestUrl('/modification/execute')
+        $this->setRequestUrl('modification/execute')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($modificationRequest)
@@ -25,7 +25,7 @@ class ModificationService extends BasicService
 
     public function executeAsyncModify(ModificationRequest $modificationRequest)
     {
-        $this->setRequestUrl('/modification/executeAsync')
+        $this->setRequestUrl('modification/executeAsync')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($modificationRequest)

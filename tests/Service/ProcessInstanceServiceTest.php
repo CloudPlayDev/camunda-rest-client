@@ -17,7 +17,7 @@ class ProcessInstanceServiceTest extends \PHPUnit\Framework\TestCase
     {
         $processInstanceService = new ProcessInstanceService('http://localhost:8080/engine-rest/');
 
-        var_dump($processInstanceService->getList());
+        self::assertIsArray($processInstanceService->getList());
     }
 
     public function testDeleteAsync()

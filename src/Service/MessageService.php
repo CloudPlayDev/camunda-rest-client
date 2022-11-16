@@ -14,7 +14,7 @@ class MessageService extends BasicService
 {
     public function correlate(MessageRequest $messageRequest = null)
     {
-        $this->setRequestUrl('/message')
+        $this->setRequestUrl('message')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($messageRequest)

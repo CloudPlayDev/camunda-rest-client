@@ -16,10 +16,10 @@ class DeploymentServiceTest extends \PHPUnit\Framework\TestCase
     public function testGetList()
     {
         $deploymentService = new DeploymentService('http://localhost:8080/engine-rest/');
-        //$deploymentRequest = new DeploymentRequest();
-        //$deploymentRequest->set('id', 'e1a85d53-b3cb-11e7-93a5-005056c00008');
-        //var_dump($deploymentService->getList($deploymentRequest));
-        //var_dump($deploymentService->getList());
+        $deploymentRequest = new DeploymentRequest();
+        $deploymentRequest->set('id', 'e1a85d53-b3cb-11e7-93a5-005056c00008');
+        $result = $deploymentService->getList($deploymentRequest);
+        self::assertIsArray($result);
     }
 
     public function testGetListCount()
@@ -46,7 +46,7 @@ class DeploymentServiceTest extends \PHPUnit\Framework\TestCase
 
         $files = new FileCollection();
 
-        $files->addFile('power35', file_get_contents('./testProcess.bpmn'), 'testProcess.bpmn');
+        $files->addFile('power35', file_get_contents(__DIR__.'/testProcess.bpmn'), 'testProcess.bpmn');
         //$files->addFile('start', file_get_contents("./startForm.form"), 'startForm.form');
 
         $deploymentRequest = new DeploymentRequest();

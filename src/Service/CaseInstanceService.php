@@ -14,7 +14,7 @@ class CaseInstanceService extends BasicService
 {
     public function getVariable($caseInstanceId, $variableName, CaseInstanceRequest $caseInstanceRequest = null)
     {
-        $this->setRequestUrl('/case-instance/' . $caseInstanceId . '/variables/' . $variableName)
+        $this->setRequestUrl('case-instance/' . $caseInstanceId . '/variables/' . $variableName)
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($caseInstanceRequest)
@@ -25,7 +25,7 @@ class CaseInstanceService extends BasicService
 
     public function getVariableData($caseInstanceId, $variableName)
     {
-        $this->setRequestUrl('/case-instance/' . $caseInstanceId . '/variables/' . $variableName)
+        $this->setRequestUrl('case-instance/' . $caseInstanceId . '/variables/' . $variableName)
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -35,7 +35,7 @@ class CaseInstanceService extends BasicService
 
     public function getVariableList($caseInstanceId, CaseInstanceRequest $caseInstanceRequest = null)
     {
-        $this->setRequestUrl('/case-instance/' . $caseInstanceId . '/variables')
+        $this->setRequestUrl('case-instance/' . $caseInstanceId . '/variables')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($caseInstanceRequest)
@@ -46,7 +46,7 @@ class CaseInstanceService extends BasicService
 
     public function updateVariable($caseInstanceId, $variableName, CaseInstanceRequest $caseInstanceRequest = null)
     {
-        $this->setRequestUrl('/case-instance/' . $caseInstanceId . '/variables/' . $variableName)
+        $this->setRequestUrl('case-instance/' . $caseInstanceId . '/variables/' . $variableName)
             ->setRequestMethod('PUT')
             ->setRequestContentType('JSON')
             ->setRequestObject($caseInstanceRequest)
@@ -60,7 +60,7 @@ class CaseInstanceService extends BasicService
         $variableName,
         CaseInstanceRequest $caseInstanceRequest = null
     ) {
-        $this->setRequestUrl('/case-instance/' . $caseInstanceId . '/variables/' . $variableName . '/data')
+        $this->setRequestUrl('case-instance/' . $caseInstanceId . '/variables/' . $variableName . '/data')
             ->setRequestMethod('POST')
             ->setRequestContentType('MULTIPART')
             ->setRequestObject($caseInstanceRequest)
@@ -71,7 +71,7 @@ class CaseInstanceService extends BasicService
 
     public function modifyVariable($caseInstanceId, CaseInstanceRequest $caseInstanceRequest = null)
     {
-        $this->setRequestUrl('/case-instance/' . $caseInstanceId . '/variables')
+        $this->setRequestUrl('case-instance/' . $caseInstanceId . '/variables')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($caseInstanceRequest)
@@ -82,7 +82,7 @@ class CaseInstanceService extends BasicService
 
     public function deleteVariable($caseInstanceId, $variableName)
     {
-        $this->setRequestUrl('/case-instance/' . $caseInstanceId . '/variables/' . $variableName)
+        $this->setRequestUrl('case-instance/' . $caseInstanceId . '/variables/' . $variableName)
             ->setRequestMethod('DELETE')
             ->setRequestContentType('JSON')
             ->run();
@@ -92,7 +92,7 @@ class CaseInstanceService extends BasicService
 
     public function getList(CaseInstanceRequest $caseInstanceRequest = null)
     {
-        $this->setRequestUrl('/case-instance')
+        $this->setRequestUrl('case-instance')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($caseInstanceRequest)
@@ -103,7 +103,7 @@ class CaseInstanceService extends BasicService
 
     public function getListCount(CaseInstanceRequest $caseInstanceRequest = null)
     {
-        $this->setRequestUrl('/case-instance/count')
+        $this->setRequestUrl('case-instance/count')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($caseInstanceRequest)
@@ -114,7 +114,7 @@ class CaseInstanceService extends BasicService
 
     public function getById($caseInstanceId)
     {
-        $this->setRequestUrl('/case-instance/' . $caseInstanceId)
+        $this->setRequestUrl('case-instance/' . $caseInstanceId)
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -124,7 +124,7 @@ class CaseInstanceService extends BasicService
 
     public function complete($caseInstanceId, CaseInstanceRequest $caseInstanceRequest = null)
     {
-        $this->setRequestUrl('/case-instance/' . $caseInstanceId . '/complete')
+        $this->setRequestUrl('case-instance/' . $caseInstanceId . '/complete')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($caseInstanceRequest)
@@ -135,7 +135,7 @@ class CaseInstanceService extends BasicService
 
     public function close($caseInstanceId, CaseInstanceRequest $caseInstanceRequest = null)
     {
-        $this->setRequestUrl('/case-execution/' . $caseInstanceId . '/close')
+        $this->setRequestUrl('case-execution/' . $caseInstanceId . '/close')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($caseInstanceRequest)
@@ -146,7 +146,7 @@ class CaseInstanceService extends BasicService
 
     public function terminate($caseInstanceId, CaseInstanceRequest $caseInstanceRequest = null)
     {
-        $this->setRequestUrl('/case-execution/' . $caseInstanceId . '/terminate')
+        $this->setRequestUrl('case-execution/' . $caseInstanceId . '/terminate')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($caseInstanceRequest)

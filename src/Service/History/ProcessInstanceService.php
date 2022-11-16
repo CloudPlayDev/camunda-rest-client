@@ -15,7 +15,7 @@ class ProcessInstanceService extends BasicService
 {
     public function getListCount(ProcessInstanceRequest $processInstanceRequest = null)
     {
-        $this->setRequestUrl('/history/process-instance/count')
+        $this->setRequestUrl('history/process-instance/count')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($processInstanceRequest)
@@ -26,7 +26,7 @@ class ProcessInstanceService extends BasicService
 
     public function getList(ProcessInstanceRequest $processInstanceRequest = null)
     {
-        $this->setRequestUrl('/history/process-instance')
+        $this->setRequestUrl('history/process-instance')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($processInstanceRequest)
@@ -37,7 +37,7 @@ class ProcessInstanceService extends BasicService
 
     public function getById($processInstanceId)
     {
-        $this->setRequestUrl('/history/process-instance/' . $processInstanceId)
+        $this->setRequestUrl('history/process-instance/' . $processInstanceId)
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();

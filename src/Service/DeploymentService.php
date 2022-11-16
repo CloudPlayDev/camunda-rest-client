@@ -14,7 +14,7 @@ class DeploymentService extends BasicService
 {
     public function getList(DeploymentRequest $deploymentRequest = null)
     {
-        $this->setRequestUrl('/deployment')
+        $this->setRequestUrl('deployment')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($deploymentRequest)
@@ -25,7 +25,7 @@ class DeploymentService extends BasicService
 
     public function getListCount(DeploymentRequest $deploymentRequest = null)
     {
-        $this->setRequestUrl('/deployment/count')
+        $this->setRequestUrl('deployment/count')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($deploymentRequest)
@@ -36,7 +36,7 @@ class DeploymentService extends BasicService
 
     public function getById($deploymentId)
     {
-        $this->setRequestUrl('/deployment/' . $deploymentId)
+        $this->setRequestUrl('deployment/' . $deploymentId)
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -46,7 +46,7 @@ class DeploymentService extends BasicService
 
     public function create(DeploymentRequest $deploymentRequest = null)
     {
-        $this->setRequestUrl('/deployment/create')
+        $this->setRequestUrl('deployment/create')
             ->setRequestMethod('POST')
             ->setRequestContentType('MULTIPART')
             ->setRequestObject($deploymentRequest)
@@ -57,7 +57,7 @@ class DeploymentService extends BasicService
 
     public function redeploy($deploymentId, DeploymentRequest $deploymentRequest = null)
     {
-        $this->setRequestUrl('/deployment/' . $deploymentId . '/redeploy')
+        $this->setRequestUrl('deployment/' . $deploymentId . '/redeploy')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($deploymentRequest)
@@ -68,7 +68,7 @@ class DeploymentService extends BasicService
 
     public function getResources($deploymentId, DeploymentRequest $deploymentRequest = null)
     {
-        $this->setRequestUrl('/deployment/' . $deploymentId . '/resources')
+        $this->setRequestUrl('deployment/' . $deploymentId . '/resources')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($deploymentRequest)
@@ -79,7 +79,7 @@ class DeploymentService extends BasicService
 
     public function getResource($deploymentId, $resourceId)
     {
-        $this->setRequestUrl('/deployment/' . $deploymentId . '/resources/' . $resourceId)
+        $this->setRequestUrl('deployment/' . $deploymentId . '/resources/' . $resourceId)
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -89,7 +89,7 @@ class DeploymentService extends BasicService
 
     public function getResourceData($deploymentId, $resourceId)
     {
-        $this->setRequestUrl('/deployment/' . $deploymentId . '/resources/' . $resourceId . '/data')
+        $this->setRequestUrl('deployment/' . $deploymentId . '/resources/' . $resourceId . '/data')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -99,11 +99,11 @@ class DeploymentService extends BasicService
 
     public function deleteById($deploymentId)
     {
-        $this->setRequestUrl('/deployment/' . $deploymentId)
+        $this->setRequestUrl('deployment/' . $deploymentId)
             ->setRequestMethod('DELETE')
             ->setRequestContentType('QUERY')
             ->run();
 
-        return $this->getResponseCode() == 204 ? true : false;
+        return $this->getResponseCode() === 204;
     }
 }

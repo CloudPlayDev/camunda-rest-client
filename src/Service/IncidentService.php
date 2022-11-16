@@ -14,7 +14,7 @@ class IncidentService extends BasicService
 {
     public function getList(IncidentRequest $incidentRequest = null)
     {
-        $this->setRequestUrl('/incident')
+        $this->setRequestUrl('incident')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($incidentRequest)
@@ -25,7 +25,7 @@ class IncidentService extends BasicService
 
     public function getListCount(IncidentRequest $incidentRequest = null)
     {
-        $this->setRequestUrl('/incident/count')
+        $this->setRequestUrl('incident/count')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($incidentRequest)

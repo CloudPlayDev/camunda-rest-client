@@ -14,7 +14,7 @@ class AuthorizationService extends BasicService
 {
     public function getList(AuthorizationRequest $authorizationRequest = null)
     {
-        $this->setRequestUrl('/authorization')
+        $this->setRequestUrl('authorization')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($authorizationRequest)
@@ -25,7 +25,7 @@ class AuthorizationService extends BasicService
 
     public function getListCount(AuthorizationRequest $authorizationRequest = null)
     {
-        $this->setRequestUrl('/authorization/count')
+        $this->setRequestUrl('authorization/count')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($authorizationRequest)
@@ -36,7 +36,7 @@ class AuthorizationService extends BasicService
 
     public function getById($authorizationId)
     {
-        $this->setRequestUrl('/authorization/' . $authorizationId)
+        $this->setRequestUrl('authorization/' . $authorizationId)
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -46,7 +46,7 @@ class AuthorizationService extends BasicService
 
     public function check(AuthorizationRequest $authorizationRequest = null)
     {
-        $this->setRequestUrl('/authorization/check')
+        $this->setRequestUrl('authorization/check')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($authorizationRequest)
@@ -57,7 +57,7 @@ class AuthorizationService extends BasicService
 
     public function options()
     {
-        $this->setRequestUrl('/authorization')
+        $this->setRequestUrl('authorization')
             ->setRequestMethod('OPTIONS')
             ->setRequestContentType('QUERY')
             ->run();
@@ -67,7 +67,7 @@ class AuthorizationService extends BasicService
 
     public function optionsById($authorizationId)
     {
-        $this->setRequestUrl('/authorization/' . $authorizationId)
+        $this->setRequestUrl('authorization/' . $authorizationId)
             ->setRequestMethod('OPTIONS')
             ->setRequestContentType('QUERY')
             ->run();
@@ -77,7 +77,7 @@ class AuthorizationService extends BasicService
 
     public function create(AuthorizationRequest $authorizationRequest = null)
     {
-        $this->setRequestUrl('/authorization/create')
+        $this->setRequestUrl('authorization/create')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($authorizationRequest)
@@ -88,7 +88,7 @@ class AuthorizationService extends BasicService
 
     public function update($authorizationId, AuthorizationRequest $authorizationRequest = null)
     {
-        $this->setRequestUrl('/authorization/' . $authorizationId)
+        $this->setRequestUrl('authorization/' . $authorizationId)
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($authorizationRequest)
@@ -99,7 +99,7 @@ class AuthorizationService extends BasicService
 
     public function deleteById($authorizationId)
     {
-        $this->setRequestUrl('/authorization/' . $authorizationId)
+        $this->setRequestUrl('authorization/' . $authorizationId)
             ->setRequestMethod('DELETE')
             ->setRequestContentType('QUERY')
             ->run();

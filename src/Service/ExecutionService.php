@@ -14,7 +14,7 @@ class ExecutionService extends BasicService
 {
     public function getLocalVariableList($executionId, ExecutionRequest $executionRequest)
     {
-        $this->setRequestUrl('/execution/' . $executionId . '/localVariables')
+        $this->setRequestUrl('execution/' . $executionId . '/localVariables')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($executionRequest)
@@ -25,7 +25,7 @@ class ExecutionService extends BasicService
 
     public function getLocalVariable($executionId, $variableName, ExecutionRequest $executionRequest)
     {
-        $this->setRequestUrl('/execution/' . $executionId . '/localVariables/' . $variableName)
+        $this->setRequestUrl('execution/' . $executionId . '/localVariables/' . $variableName)
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($executionRequest)
@@ -36,7 +36,7 @@ class ExecutionService extends BasicService
 
     public function getLocalVariableData($executionId, $variableName)
     {
-        $this->setRequestUrl('/execution/' . $executionId . '/localVariables/' . $variableName . '/data')
+        $this->setRequestUrl('execution/' . $executionId . '/localVariables/' . $variableName . '/data')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -46,7 +46,7 @@ class ExecutionService extends BasicService
 
     public function updateLocalVariable($executionId, $variableName, ExecutionRequest $executionRequest)
     {
-        $this->setRequestUrl('/execution/' . $executionId . '/localVariables/' . $variableName)
+        $this->setRequestUrl('execution/' . $executionId . '/localVariables/' . $variableName)
             ->setRequestMethod('PUT')
             ->setRequestContentType('JSON')
             ->setRequestObject($executionRequest)
@@ -60,7 +60,7 @@ class ExecutionService extends BasicService
         $variableName,
         ExecutionRequest $executionRequest
     ) {
-        $this->setRequestUrl('/execution/' . $executionId . '/localVariables/' . $variableName . '/data')
+        $this->setRequestUrl('execution/' . $executionId . '/localVariables/' . $variableName . '/data')
             ->setRequestMethod('POST')
             ->setRequestContentType('MULTIPART')
             ->setRequestObject($executionRequest)
@@ -71,7 +71,7 @@ class ExecutionService extends BasicService
 
     public function modifyLocalVariable($executionId, ExecutionRequest $executionRequest)
     {
-        $this->setRequestUrl('/execution/' . $executionId . '/localVariables/')
+        $this->setRequestUrl('execution/' . $executionId . '/localVariables/')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($executionRequest)
@@ -82,7 +82,7 @@ class ExecutionService extends BasicService
 
     public function deleteLocalVariable($executionId, $variableName)
     {
-        $this->setRequestUrl('/execution/' . $executionId . '/localVariables/' . $variableName)
+        $this->setRequestUrl('execution/' . $executionId . '/localVariables/' . $variableName)
             ->setRequestMethod('DELETE')
             ->setRequestContentType('JSON')
             ->run();
@@ -92,7 +92,7 @@ class ExecutionService extends BasicService
 
     public function getMessageEventSubscription($executionId, $messageName)
     {
-        $this->setRequestUrl('/execution/' . $executionId . '/messageSubscriptions/' . $messageName)
+        $this->setRequestUrl('execution/' . $executionId . '/messageSubscriptions/' . $messageName)
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -105,7 +105,7 @@ class ExecutionService extends BasicService
         $messageName,
         ExecutionRequest $executionRequest = null
     ) {
-        $this->setRequestUrl('/execution/' . $executionId . '/messageSubscriptions/' . $messageName . '/trigger')
+        $this->setRequestUrl('execution/' . $executionId . '/messageSubscriptions/' . $messageName . '/trigger')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($executionRequest)
@@ -116,7 +116,7 @@ class ExecutionService extends BasicService
 
     public function getList(ExecutionRequest $executionRequest = null)
     {
-        $this->setRequestUrl('/execution')
+        $this->setRequestUrl('execution')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($executionRequest)
@@ -127,7 +127,7 @@ class ExecutionService extends BasicService
 
     public function getListCount(ExecutionRequest $executionRequest = null)
     {
-        $this->setRequestUrl('/execution/count')
+        $this->setRequestUrl('execution/count')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($executionRequest)
@@ -138,7 +138,7 @@ class ExecutionService extends BasicService
 
     public function getById($executionId)
     {
-        $this->setRequestUrl('/execution/' . $executionId)
+        $this->setRequestUrl('execution/' . $executionId)
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->run();
@@ -148,7 +148,7 @@ class ExecutionService extends BasicService
 
     public function trigger($executionId, ExecutionRequest $executionRequest = null)
     {
-        $this->setRequestUrl('/execution/' . $executionId . '/signal')
+        $this->setRequestUrl('execution/' . $executionId . '/signal')
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($executionRequest)
