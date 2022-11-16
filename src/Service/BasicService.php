@@ -63,7 +63,7 @@ class BasicService
     public function __construct(string $restApiUrl = '', ?string $apiUser = null, ?string $apiPassword = null)
     {
         $clientSettings = [
-            'base_uri' => trim($restApiUrl),
+            'base_uri' => rtrim(trim($restApiUrl), '/'). '/',
         ];
         if($apiUser && $apiPassword) {
             $clientSettings['auth'] = [$apiUser, $apiPassword];
